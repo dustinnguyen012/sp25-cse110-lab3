@@ -17,7 +17,8 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  padding-bottom: 60px; /* Space for footer */
+  padding-bottom: 60px;
+  /* Space for footer */
 }
 
 /* ------------------ Layout & Box Model ------------------ */
@@ -29,17 +30,22 @@ section {
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Longhand margin */
 .agenda {
-  margin-top: 2rem;
-  margin-right: 1rem;
-  margin-bottom: 2rem;
-  margin-left: 1rem;
+  margin: 2rem auto;
+  /* centers horizontally */
+  padding: 1rem 2rem;
+  max-width: 800px;
   border-left: 4px solid var(--accent-color);
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Shorthand padding */
 .new {
@@ -63,7 +69,8 @@ section {
 
 /* ------------------ Typography ------------------ */
 h2 {
-  color: #5a85e0; /* Fallback color */
+  color: #5a85e0;
+  /* Fallback color */
   color: color-mix(in srgb, #1e90ff 70%, #ff69b4);
   text-align: left;
   text-decoration: underline;
@@ -83,7 +90,7 @@ header h3 {
 #main-title {
   font-size: 2.5rem;
   margin-bottom: 0.5em;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 p {
@@ -92,7 +99,8 @@ p {
 }
 
 /* ------------------ Display & Sizing ------------------ */
-.video, .audio {
+.video,
+.audio {
   display: block;
   width: 100%;
   max-width: 600px;
@@ -205,7 +213,8 @@ img[alt] {
 }
 
 /* Selector List */
-h1, h2 {
+h1,
+h2 {
   font-weight: bold;
 }
 
@@ -216,18 +225,19 @@ section ul {
 }
 
 /* Child Combinator */
-section > h2 {
+section>h2 {
   color: steelblue;
   margin-top: 0;
 }
 
 /* General Sibling Combinator */
-h2 ~ p {
+h2~p {
   font-size: 1.1rem;
 }
 
 /* Adjacent Sibling Combinator */
-h2 + ul, h2 + ol {
+h2+ul,
+h2+ol {
   background-color: #f0f0f0;
   padding: 15px;
   border-radius: 8px;
@@ -264,25 +274,27 @@ section:has(video) {
   body {
     font-size: 14px;
   }
-  
-  header, section {
+
+  header,
+  section {
     padding: 0.5rem;
     margin: 1rem;
   }
-  
+
   .agenda ol {
     padding-left: 20px;
   }
-  
+
   .agenda li {
     margin-bottom: 10px;
   }
-  
+
   .attendance ul {
     flex-direction: column;
   }
-  
-  img, video {
+
+  img,
+  video {
     width: 100%;
   }
 }
