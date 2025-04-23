@@ -1,0 +1,223 @@
+/* ------------------ General Styles & Variables ------------------ */
+:root {
+  --primary-color: #1e90ff;
+  --accent-color: hsl(45, 100%, 50%);
+  --fallback-color: orange;
+  --text-color: var(--primary-color, var(--fallback-color));
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------ Layout & Box Model ------------------ */
+header,
+section {
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  max-width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+section.comments {
+  background-color: rgba(255, 165, 0, 0.1);
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+/* Longhand + shorthand for margin and padding */
+.agenda {
+  margin-top: 2rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  padding: 10px 20px;
+}
+
+.new {
+  margin: auto;
+  padding: 15px 30px 15px 30px;
+}
+
+/* Border details */
+.attendance {
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 2px;
+  border-radius: 8px;
+}
+
+/* ------------------ Typography ------------------ */
+h2 {
+  color: color-mix(in srgb, orange 70%, pink);
+  text-align: left;
+  text-decoration: underline;
+}
+
+ul li,
+ol li {
+  line-height: 1.6;
+}
+
+/* ------------------ Display & Sizing ------------------ */
+.video,
+.audio {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  min-width: 200px;
+}
+
+/* ------------------ Positioning ------------------ */
+footer {
+  position: sticky;
+  bottom: 0;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+/* ------------------ Flexbox Example ------------------ */
+.content-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Minimum 3 Flexbox properties */
+.attendance ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ------------------ Grid Example ------------------ */
+.agenda {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Minimum 3 Grid properties */
+.agenda ol {
+  grid-column: span 2;
+}
+
+/* ------------------ Pseudo-classes ------------------ */
+li:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+li:active {
+  background-color: #ddd;
+}
+
+/* ------------------ Selectors ------------------ */
+
+/* Class Selector */
+.comments {
+  font-style: italic;
+}
+
+/* ID Selector */
+#main-title {
+  font-size: 2.5rem;
+}
+
+/* Universal Selector */
+* {
+  box-sizing: border-box;
+}
+
+/* Element Selector */
+figure {
+  margin: 1rem auto;
+}
+
+/* Attribute Selector */
+img[alt] {
+  border: 2px dashed lightblue;
+}
+
+/* Selector List */
+h1, h2 {
+  font-weight: bold;
+}
+
+/* Descendant Combinator */
+section ul {
+  list-style-type: circle;
+}
+
+/* Child Combinator */
+section > h2 {
+  color: steelblue;
+}
+
+/* General Sibling Combinator */
+h2 ~ p {
+  font-size: 1.1rem;
+}
+
+/* Adjacent Sibling Combinator */
+h2 + ul {
+  background-color: #f0f0f0;
+}
+
+/* Combining Two Selectors */
+h2.agenda {
+  color: purple;
+}
+
+/* New Selector - :has() */
+section:has(audio) {
+  background-color: #fff6e0;
+}
+
+/* Nested Selectors (with @layer or just modern nesting) */
+@layer base {
+  section {
+    & h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
+
+/* ------------------ Responsive Media Query ------------------ */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  header,
+  section {
+    padding: 1rem;
+  }
+
+  .agenda {
+    display: block;
+  }
+}
+
+/* ------------------ Fonts ------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ------------------ CSS Comments ------------------ */
+/* This stylesheet includes all required Lab 3 properties for CSE 110 */
