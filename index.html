@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>First Brainstorm - Meeting Minutes</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Internal CSS example -->
+    <style>
+        header h1 {
+            color: darkblue;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,16 +24,15 @@
         <h3>Date: April 15, 2025</h3>
     </header>
 
-    <section>
+    <section class="attendance">
         <h2>Attendance</h2>
         <ul>
             <li>Dustin Nguyen</li>
             <li>John Doe</li>
-
         </ul>
     </section>
 
-    <section>
+    <section class="agenda">
         <h2>Agenda</h2>
         <ol>
             <li>Team check-in</li>
@@ -33,41 +42,39 @@
         </ol>
     </section>
 
-    <section>
+    <section class="unfinished">
         <h2>Unfinished Business</h2>
         <p>No previous meeting, nothing carried over.</p>
     </section>
 
-    <section>
+    <section class="new">
         <h2>New Business</h2>
         <ul>
             <li>Need simple UI mockup before next meeting</li>
         </ul>
     </section>
 
-    <section>
+    <section class="comments">
         <h2>Miscellaneous Comments</h2>
-        <p>John suggested checking out other app for inspiration. Dustin brought up the need for accessibility
-            features.</p>
+        <p style="color: green; font-style: italic;">John suggested checking out other app for inspiration. Dustin brought up the need for accessibility features.</p>
     </section>
 
-    <section>
+    <section class="diagram">
         <h2>Diagram from Meeting</h2>
         <figure>
-            <img src="Web_Application_Architecture_Diagram__diagram_.png" alt="System architecture diagram Example"
-                width="500">
+            <img src="Web_Application_Architecture_Diagram__diagram_.png" alt="System architecture diagram Example" width="500">
             <figcaption>System architecture diagram Example</figcaption>
         </figure>
     </section>
 
-    <section>
+    <section class="audio">
         <h2>Meeting Audio Recording</h2>
         <audio controls>
             <source src="hellosoundeffect.mp3" type="audio/mpeg">
         </audio>
     </section>
 
-    <section>
+    <section class="video">
         <h2>Meeting Video Recording</h2>
         <video controls width="500">
             <source src="videoplayback.mp4" type="video/mp4">
