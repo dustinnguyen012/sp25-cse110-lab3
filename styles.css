@@ -145,27 +145,30 @@ body::after {
   text-align: center;
 }
 
-/* ------------------ Grid Example ------------------ */
+/* Fix for agenda layout */
 .agenda ol {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  padding-left: 20px;
+  display: block; /* Change from grid to block for proper alignment */
+  padding-left: 20px; /* Add proper indentation */
+  margin: 0 auto; /* Center the list */
 }
 
 .agenda li {
   background-color: #f9f9f9;
   padding: 10px;
   border-radius: 5px;
-  grid-column: auto;
+  margin-bottom: 10px; /* Add spacing between items */
 }
 
-.agenda li:nth-child(odd) {
-  grid-column: 1;
+/* Fix for attendance list */
+.attendance ul {
+  display: block; /* Change from flex to block */
+  list-style-type: disc; /* Restore bullet points */
+  padding-left: 20px;
 }
 
-.agenda li:nth-child(even) {
-  grid-column: 2;
+.attendance li {
+  padding: 5px 0;
+  background: none; /* Remove background */
 }
 
 /* ------------------ Pseudo-classes ------------------ */
