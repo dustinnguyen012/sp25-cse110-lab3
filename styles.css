@@ -6,12 +6,18 @@
   --text-color: var(--primary-color, var(--fallback-color));
 }
 
+/* Universal Selector */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f9f9f9;
   color: #333;
   margin: 0;
   padding: 0;
+  padding-bottom: 60px; /* Space for footer */
 }
 
 /* ------------------ Layout & Box Model ------------------ */
@@ -72,9 +78,16 @@ header h3 {
   color: rgba(70, 70, 120, 0.8);
 }
 
+/* ID Selector for main title */
+#main-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
 p {
   line-height: 1.6;
-  color: var(--text-color);
+  color: #333;
 }
 
 /* ------------------ Display & Sizing ------------------ */
@@ -89,6 +102,7 @@ p {
 figure {
   display: inline-block;
   text-align: center;
+  margin: 1rem auto;
 }
 
 figcaption {
@@ -111,9 +125,8 @@ figcaption {
   z-index: 10;
 }
 
-/* Add a sticky footer for positioning example */
-body::after {
-  content: "© 2025 Meeting Minutes";
+/* Sticky footer */
+footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -122,7 +135,7 @@ body::after {
   color: white;
   text-align: center;
   padding: 1em;
-  font-size: 0.8em;
+  z-index: 100;
 }
 
 /* ------------------ Flexbox Example ------------------ */
@@ -130,7 +143,7 @@ body::after {
 .attendance ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   justify-content: space-around;
   padding-left: 0;
   list-style-type: none;
@@ -138,37 +151,31 @@ body::after {
 
 .attendance li {
   flex: 1;
+  min-width: 120px;
   background-color: #e6f2ff;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 5px;
-  min-width: 100px;
   text-align: center;
 }
 
-/* Fix for agenda layout */
+/* ------------------ Grid Example ------------------ */
 .agenda ol {
-  display: block; /* Change from grid to block for proper alignment */
-  padding-left: 20px; /* Add proper indentation */
-  margin: 0 auto; /* Center the list */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 0 0 0 20px;
+  margin: 0;
 }
 
 .agenda li {
   background-color: #f9f9f9;
   padding: 10px;
   border-radius: 5px;
-  margin-bottom: 10px; /* Add spacing between items */
+  list-style-position: inside;
 }
 
-/* Fix for attendance list */
-.attendance ul {
-  display: block; /* Change from flex to block */
-  list-style-type: disc; /* Restore bullet points */
-  padding-left: 20px;
-}
-
-.attendance li {
-  padding: 5px 0;
-  background: none; /* Remove background */
+.agenda li:nth-child(3), .agenda li:nth-child(4) {
+  grid-column: span 1;
 }
 
 /* ------------------ Pseudo-classes ------------------ */
@@ -190,30 +197,15 @@ li:active {
   font-style: italic;
 }
 
-/* ID Selector - Let's add an ID to the main title in CSS */
-header h1 {
-  font-size: 2.5rem;
-  color: darkblue;
-  text-align: center;
-  margin-bottom: 0.5em;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-
-/* Universal Selector */
-* {
-  box-sizing: border-box;
-}
-
 /* Element Selector */
-figure {
-  margin: 1rem auto;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Attribute Selector */
 img[alt] {
   border: 2px dashed lightblue;
-  max-width: 100%;
-  height: auto;
 }
 
 /* Selector List */
@@ -224,6 +216,7 @@ h1, h2 {
 /* Descendant Combinator */
 section ul {
   list-style-type: circle;
+  margin-bottom: 10px;
 }
 
 /* Child Combinator */
@@ -267,6 +260,11 @@ section:has(video) {
   }
 }
 
+/* Fix for New Business section - ensure bullets are visible */
+.new ul {
+  padding-left: 20px;
+}
+
 /* ------------------ Responsive Media Query ------------------ */
 @media (max-width: 600px) {
   body {
@@ -280,13 +278,18 @@ section:has(video) {
   
   .agenda ol {
     display: block;
+    padding-left: 20px;
+  }
+  
+  .agenda li {
+    margin-bottom: 10px;
   }
   
   .attendance ul {
     flex-direction: column;
   }
   
-  img {
+  img, video {
     width: 100%;
   }
 }
