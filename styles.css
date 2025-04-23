@@ -63,7 +63,8 @@ section {
 
 /* ------------------ Typography ------------------ */
 h2 {
-  color: color-mix(in srgb, var(--primary-color) 70%, #ff69b4);
+  color: #5a85e0; /* Fallback color */
+  color: color-mix(in srgb, #1e90ff 70%, #ff69b4);
   text-align: left;
   text-decoration: underline;
 }
@@ -159,23 +160,18 @@ footer {
 }
 
 /* ------------------ Grid Example ------------------ */
+/* Fixed Agenda Section Styling */
 .agenda ol {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding: 0 0 0 20px;
-  margin: 0;
+  display: block;
+  padding-left: 2rem;
+  margin: 1rem 0;
 }
 
 .agenda li {
   background-color: #f9f9f9;
-  padding: 10px;
+  padding: 12px 15px;
   border-radius: 5px;
-  list-style-position: inside;
-}
-
-.agenda li:nth-child(3), .agenda li:nth-child(4) {
-  grid-column: span 1;
+  margin-bottom: 10px;
 }
 
 /* ------------------ Pseudo-classes ------------------ */
@@ -252,12 +248,10 @@ section:has(video) {
   background-color: #e6f7ff;
 }
 
-/* Nested Selectors */
-.unfinished {
-  & p {
-    font-style: italic;
-    color: #777;
-  }
+/* Fixed nested selector - traditional syntax */
+.unfinished p {
+  font-style: italic;
+  color: #777;
 }
 
 /* Fix for New Business section - ensure bullets are visible */
@@ -277,7 +271,6 @@ section:has(video) {
   }
   
   .agenda ol {
-    display: block;
     padding-left: 20px;
   }
   
