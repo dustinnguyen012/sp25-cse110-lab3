@@ -1,44 +1,44 @@
-# 1-on-1 Meeting
+# Team Standup Notes
 
-## Date and Time
-*Insert Date and Time*
+## Meeting Info
+**Date & Time:**  
+*Add the day and time of the check-in*
 
-## Participants
-- *Name 1*
-- *Name 2*
+**Attendees:**  
+- Team Member 1  
+- Team Member 2  
 
-## Meeting Type
-*e.g., Weekly sync, Sprint check-in, Progress review*
+**Check-In Type:**  
+*Brief description of the meeting (e.g., Sprint Planning, Weekly Check-In)*
 
-## Materials
-- *Add relevant links or documents discussed*
-- *Note any prep items or resources brought into the meeting*
-
----
-
-## Goals & Questions
-
-| Participant     | Reflection on Last Week                       | Priorities for This Week                         |
-|-----------------|-----------------------------------------------|--------------------------------------------------|
-| *Person A*      | What did you learn or notice since last time? | What are you focusing on before the next meeting?|
-| *Person B*      | How did things go overall?                    | What are your top 1–2 priorities for this week?  |
+**Shared Resources:**  
+- *List any files, links, or tools used during the meeting*
+- *Optional prep notes or agenda items*
 
 ---
 
-## Important Topics
+## Highlights & Takeaways
 
-| Topic           | Description                                     | Notes or Results                                 |
-|------------------|--------------------------------------------------|--------------------------------------------------|
-| *e.g., New feature launch* | Discussion points, ideas, or concerns     | Outcomes, decisions, or follow-up actions        |
-
----
-
-## Action Items
-
-- [ ] *Task 1 – owner, deadline (if known)*
-- [ ] *Task 2 – owner, deadline (if known)*
-- [ ] *Task 3 – owner, deadline (if known)*
+| Team Member   | Summary of Progress                              | Current Priorities                                |
+|---------------|--------------------------------------------------|--------------------------------------------------|
+| *Name 1*      | What’s been accomplished or learned recently?     | What are your goals or key tasks this week?      |
+| *Name 2*      | Any challenges faced or trends noticed?           | What needs to get done before the next check-in? |
 
 ---
 
-> Use this section to track anything that needs to get done after the meeting. Assign owners if possible.
+## Key Discussions
+
+| Subject         | Overview                                         | Outcomes or Decisions                            |
+|-----------------|--------------------------------------------------|--------------------------------------------------|
+| *Topic A*       | Summary of what was discussed                    | Final thoughts, agreements, or next steps        |
+| *Topic B*       | Key points or blockers identified                | Who’s responsible for what, if applicable        |
+
+---
+
+## Tasks & Follow-Ups
+
+- [ ] Task Name – *Assigned to*, due by *Date*
+- [ ] Task Name – *Assigned to*, due by *Date*
+- [ ] Task Name – *Assigned to*, due by *Date*
+
+---
