@@ -7,9 +7,9 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f9f9f9;
-  color: var(--text-color);
+  color: #333;
   margin: 0;
   padding: 0;
 }
@@ -22,118 +22,178 @@ section {
   max-width: 800px;
   border: 1px solid #ccc;
   border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-section.comments {
-  background-color: rgba(255, 165, 0, 0.1);
-}
-
-img {
-  display: block;
-  margin: auto;
-}
-
-/* Longhand + shorthand for margin and padding */
+/* Longhand margin */
 .agenda {
   margin-top: 2rem;
   margin-right: 1rem;
   margin-bottom: 2rem;
   margin-left: 1rem;
-  padding: 10px 20px;
+  border-left: 4px solid var(--accent-color);
 }
 
+/* Shorthand padding */
 .new {
-  margin: auto;
   padding: 15px 30px 15px 30px;
+  background-color: #f0f8ff;
 }
 
-/* Border details */
+/* Longhand border */
 .attendance {
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(30, 144, 255, 0.3);
   border-width: 2px;
   border-radius: 8px;
 }
 
+/* Shorthand border */
+.comments {
+  border: 2px dashed #ccc;
+  background-color: rgba(255, 165, 0, 0.1);
+}
+
 /* ------------------ Typography ------------------ */
 h2 {
-  color: color-mix(in srgb, orange 70%, pink);
+  color: color-mix(in srgb, var(--primary-color) 70%, #ff69b4);
   text-align: left;
   text-decoration: underline;
 }
 
-ul li,
-ol li {
+header h2 {
+  text-align: center;
+  color: rgb(60, 60, 150);
+}
+
+header h3 {
+  text-align: center;
+  color: rgba(70, 70, 120, 0.8);
+}
+
+p {
   line-height: 1.6;
+  color: var(--text-color);
 }
 
 /* ------------------ Display & Sizing ------------------ */
-.video,
-.audio {
+.video, .audio {
   display: block;
   width: 100%;
   max-width: 600px;
   min-width: 200px;
+  margin: 1em auto;
+}
+
+figure {
+  display: inline-block;
+  text-align: center;
+}
+
+figcaption {
+  display: block;
+  font-style: italic;
+  margin-top: 8px;
 }
 
 /* ------------------ Positioning ------------------ */
-footer {
+.diagram {
+  position: relative;
+  padding-bottom: 2em;
+}
+
+.diagram h2 {
   position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+/* Add a sticky footer for positioning example */
+body::after {
+  content: "© 2025 Meeting Minutes";
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   background: #333;
   color: white;
   text-align: center;
   padding: 1em;
+  font-size: 0.8em;
 }
 
 /* ------------------ Flexbox Example ------------------ */
-.content-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
 /* Minimum 3 Flexbox properties */
 .attendance ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  gap: 20px;
+  justify-content: space-around;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.attendance li {
+  flex: 1;
+  background-color: #e6f2ff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  min-width: 100px;
+  text-align: center;
 }
 
 /* ------------------ Grid Example ------------------ */
-.agenda {
+.agenda ol {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  padding-left: 20px;
 }
 
-/* Minimum 3 Grid properties */
-.agenda ol {
-  grid-column: span 2;
+.agenda li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  grid-column: auto;
+}
+
+.agenda li:nth-child(odd) {
+  grid-column: 1;
+}
+
+.agenda li:nth-child(even) {
+  grid-column: 2;
 }
 
 /* ------------------ Pseudo-classes ------------------ */
 li:hover {
   background-color: #eee;
   cursor: pointer;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 li:active {
   background-color: #ddd;
+  transform: translateY(1px);
 }
 
 /* ------------------ Selectors ------------------ */
-
 /* Class Selector */
 .comments {
   font-style: italic;
 }
 
-/* ID Selector */
-#main-title {
+/* ID Selector - Let's add an ID to the main title in CSS */
+header h1 {
   font-size: 2.5rem;
+  color: darkblue;
+  text-align: center;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 /* Universal Selector */
@@ -149,6 +209,8 @@ figure {
 /* Attribute Selector */
 img[alt] {
   border: 2px dashed lightblue;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Selector List */
@@ -164,6 +226,7 @@ section ul {
 /* Child Combinator */
 section > h2 {
   color: steelblue;
+  margin-top: 0;
 }
 
 /* General Sibling Combinator */
@@ -172,13 +235,16 @@ h2 ~ p {
 }
 
 /* Adjacent Sibling Combinator */
-h2 + ul {
+h2 + ul, h2 + ol {
   background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 /* Combining Two Selectors */
-h2.agenda {
-  color: purple;
+section.comments {
+  color: #555;
+  background-color: #fffaf0;
 }
 
 /* New Selector - :has() */
@@ -186,13 +252,15 @@ section:has(audio) {
   background-color: #fff6e0;
 }
 
-/* Nested Selectors (with @layer or just modern nesting) */
-@layer base {
-  section {
-    & h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.5rem;
-    }
+section:has(video) {
+  background-color: #e6f7ff;
+}
+
+/* Nested Selectors */
+.unfinished {
+  & p {
+    font-style: italic;
+    color: #777;
   }
 }
 
@@ -201,23 +269,27 @@ section:has(audio) {
   body {
     font-size: 14px;
   }
-
-  header,
-  section {
-    padding: 1rem;
+  
+  header, section {
+    padding: 0.5rem;
+    margin: 1rem;
   }
-
-  .agenda {
+  
+  .agenda ol {
     display: block;
+  }
+  
+  .attendance ul {
+    flex-direction: column;
+  }
+  
+  img {
+    width: 100%;
   }
 }
 
 /* ------------------ Fonts ------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-body {
-  font-family: 'Roboto', sans-serif;
-}
 
 /* ------------------ CSS Comments ------------------ */
 /* This stylesheet includes all required Lab 3 properties for CSE 110 */
